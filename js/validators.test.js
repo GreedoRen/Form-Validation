@@ -1,68 +1,31 @@
-// import { validateName, validateConfirmPassword, validateEmail } from './validators';
-// let result;
+import { validateName, validateConfirmPassword, validateEmail } from './validators';
+let result;
 
-// test('validateName', () => {
-// 	result = validateName('John Doe');
-// 	expect(result).not.toEqual({
-// 		valid: true,
-// 		error: 'Must not be empty'
-// 	});
-// 	result = validateName(' ');
-// 	expect(result).toEqual({
-// 		valid: false,
-// 		error: 'Must not be empty'
-// 	});
-// });
-
-// test('confirmPassword()', () => {
-// 	result = validateConfirmPassword('1234567a', '123456a');
-// 	expect(result).toEqual({
-// 		valid: false,
-// 		error: 'Must not be empty'
-// 	});
-// });
-
-// test('validateEmail()', () => {
-// 	result = validateEmail('john@email');
-// 	expect(result).toEqual({
-// 		valid: false,
-// 		error: 'Must not be empty'
-// 	});
-// });
-
-    
-import {
-	validateName,
-	validateConfirmPassword,
-	validateEmail
-  } from './validators';
-  let result;
-  
-  test('validateName()', () => {
+test('validateName()', () => {
 	result = validateName('John Doe');
 	expect(result).not.toEqual({
-	  valid: true,
-	  error: 'Must not be empty'
+		valid: true,
+		error: 'Must not be empty'
 	});
 	result = validateName(' ');
 	expect(result).toEqual({
-	  valid: false,
-	  error: 'Must not be empty'
+		valid: false,
+		error: 'Must not be empty'
 	});
-  });
-  
-  test('confirmPassword()', () => {
-	result = validateConfirmPassword('123456a', '1234567a');
+});
+
+test('confirmPassword()', () => {
+	result = validateConfirmPassword('1234567a', '123456a');
 	expect(result).toEqual({
-	  valid: false,
-	  error: 'Passwords must match'
+		valid: false,
+		error: 'Passwords must match'
 	});
-  });
-  
-  test('validateEmail()', () => {
+});
+
+test('validateEmail()', () => {
 	result = validateEmail('john@email');
 	expect(result).toEqual({
-	  valid: false,
-	  error: 'Must be a valid email address'
+		valid: false,
+		error: 'Must be a valid email address'
 	});
-  });
+});
